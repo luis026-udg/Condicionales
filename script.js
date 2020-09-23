@@ -25,30 +25,31 @@
 function displayPizzaUsuario() {
   var t = document.getElementById("usuario_number_pizzas");
   var number_pizzas = parseInt(t.value);
-  console.log("numero de pizzas first " + number_pizzas)
   var tipoPizza = document.getElementsByName('pizza_usuario');
   var pizzaElegida;
   var noHayEleccion = 0;
-  console.log(tipoPizza);
   for(var i = 0; i < tipoPizza.length; i++)
   {
+    var numeroDEpizzas = number_pizzas;
     if(tipoPizza[i].checked == true)
     {
       pizzaElegida = tipoPizza[i].value;
       console.log(pizzaElegida);
     }
-    else
+    if(tipoPizza[i].checked == false)
     {
       noHayEleccion ++;
-      console.log(noHayEleccion);
     }
-    console.log("numero de pizzas " + number_pizzas)
-    if(number_pizzas = 1)
+    console.log("numero de pizzas " + numeroDEpizzas);
+    if(numeroDEpizzas == 1)
     {
-
       document.getElementById("resultado").innerHTML = "Pediste una pizza de "+pizzaElegida;
     }
-      document.getElementById("resultado").innerHTML = "Pediste "+number_pizzas+" pizzas de "+pizzaElegida;
+    else
+    {
+      document.getElementById("resultado").innerHTML = "Pediste "+numeroDEpizzas+" pizzas de "+pizzaElegida;
+
+    }
     if(noHayEleccion >= 3)
     {
       document.getElementById("resultado").innerHTML = "Porfavor elige una pizza";
