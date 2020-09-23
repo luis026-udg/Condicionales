@@ -61,12 +61,13 @@ function calcularPrecioPedido(cantidadPizzas,estiloPizza)
   }
   if (cuponElegido == "Oro")
   {
-    descuento = subtotal * cupon2;
+    descuento = subtotal * cupon1;
     descuento_porcentaje = 10;
     console.log(descuento);
   }
   if (cuponElegido == "Nuevo")
   {
+    descuento = 0;
     descuento_porcentaje = 0;
   }
   total = subtotal - descuento;
