@@ -22,7 +22,17 @@
 // preciopizzaB=20
 //
 // preciopizzaC=25
-function displayPizzaUsuario() {
+function calcularPrecioPedido(cantidadPizzas,estiloPizza)
+{
+  var cupon1=10;
+  var cupon2=20;
+  var precioPeperoni=150;
+  var precioHawaiana=200;
+  var precioFunghi=250;
+}
+
+function displayPizzaUsuario()
+{
   var t = document.getElementById("usuario_number_pizzas");
   var number_pizzas = parseInt(t.value);
   var tipoPizza = document.getElementsByName('pizza_usuario');
@@ -40,6 +50,7 @@ function displayPizzaUsuario() {
     {
       noHayEleccion ++;
     }
+    console.log("eleccion "+ noHayEleccion);
     console.log("numero de pizzas " + numeroDEpizzas);
     if(numeroDEpizzas == 1)
     {
@@ -50,13 +61,13 @@ function displayPizzaUsuario() {
       document.getElementById("resultado").innerHTML = "Pediste "+numeroDEpizzas+" pizzas de "+pizzaElegida;
 
     }
-    if(noHayEleccion >= 3)
+    if(noHayEleccion >= tipoPizza.length)
     {
       document.getElementById("resultado").innerHTML = "Porfavor elige una pizza";
     }
   }
 }
-console.log("test");
+
 var resultado = document.getElementById("resultado");
 var b = document.getElementById("play");
 b.addEventListener("click", displayPizzaUsuario);
